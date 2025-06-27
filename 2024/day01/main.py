@@ -2,8 +2,8 @@ def read_input(input_file_dir: str) -> tuple[list[int], list[int]]:
     with open(input_file_dir) as f:
         lines = f.read().splitlines()
     
-    list1 = []
-    list2 = []
+    list1: list[int] = []
+    list2: list[int] = []
     for line in lines:
         num1, num2 = line.split()
         list1.append(int(num1))
