@@ -1,4 +1,4 @@
-def read_input(input_file_dir: str) -> ([int], [int]):
+def read_input(input_file_dir: str) -> tuple[list[int], list[int]]:
     with open(input_file_dir) as f:
         lines = f.read().splitlines()
     
@@ -10,7 +10,7 @@ def read_input(input_file_dir: str) -> ([int], [int]):
         list2.append(int(num2))
     return list1, list2
 
-def calc_distance(list1: [int], list2: [int]) -> int:
+def calc_distance(list1: list[int], list2: list[int]) -> int:
     list1 = sorted(list1)
     list2 = sorted(list2)
 
@@ -19,8 +19,8 @@ def calc_distance(list1: [int], list2: [int]) -> int:
         sum += abs(list1[i] - list2[i])
     return sum
 
-def calc_similarity(list1: [int], list2: [int]) -> int:
-    freq = {}
+def calc_similarity(list1: list[int], list2: list[int]) -> int:
+    freq: dict = {}
     for num in list2:
         if num in freq:
             freq[num] += 1
