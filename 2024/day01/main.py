@@ -20,13 +20,13 @@ def calc_distance(list1: list[int], list2: list[int]) -> int:
     return sum
 
 def calc_similarity(list1: list[int], list2: list[int]) -> int:
-    freq: dict = {}
+    freq: dict[int, int] = {}
     for num in list2:
         if num in freq:
             freq[num] += 1
         else:
             freq[num] = 1
-    
+
     sum = 0
     for num in list1:
         if num in freq:
